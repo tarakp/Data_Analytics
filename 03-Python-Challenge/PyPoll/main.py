@@ -51,4 +51,19 @@ with open(filepath, 'r') as csvfile:
     print("----------------------------\n")
 
 
+#### Write the data in CSV File.
+### 03-Python-Challenge\PyBank\Resources
+
+outputpath = os.path.join(".", "03-Python-Challenge", "PyPoll", "Resources", "Analysis.csv")
+
+with open(outputpath, 'w', newline='') as r:
+    # print(roster)
+    csvwriter = csv.writer(r, delimiter=',')
+    ## This will Wirte the Header row
+    csvwriter.writerow(['Total Votes', 'Khan Percent', 'Khan Total Votes', 'Corry Percent', 'Corry Total Votes', 'Li Percent', 'Li Total Votes', 'Tooley Percent', 'Tooley Total Votes'])
+    ## This will Write all other Rows
+    # csvwriter.writerow(f'{total} {count} {average} {maxdate} {maxchange} {mindate} {minchange}')
+    csvwriter.writerow([totalcount, khan_percent, khan_count, corry_percent, corry_count, li_percent, li_count, tooley_percent,tooley_count])
+    
+print("CSV File Updated\n")
 
