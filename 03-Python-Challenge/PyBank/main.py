@@ -4,7 +4,9 @@ import csv
 
 ## 03-Python-Challenge\PyBank\Resources\budget_data.csv
 
-filepath = os.path.join(".", "03-Python-Challenge", "PyBank", "Resources", "budget_data.csv")
+filepath = os.path.join(".", "PyBank", "Resources", "budget_data.csv")
+
+# filepath = r'C:\Users\tarak\Desktop\DataAnalytics\~Homework\Data_Analytics\03-Python-Challenge\PyBank\Resources\budget_data.csv'
 
 profit = []
 total = 0
@@ -60,8 +62,9 @@ with open(filepath) as csvfile:
 # roster = zip(f'{total}, {count}, {average}, {maxdate}, {maxchange}, {mindate}, {minchange}')
 
 ### 03-Python-Challenge\PyBank\Resources
+# outputpath = r'C:\Users\tarak\Desktop\DataAnalytics\~Homework\Data_Analytics\03-Python-Challenge\PyBank\Resources\Analysis.csv'
 
-outputpath = os.path.join(".", "03-Python-Challenge", "PyBank", "Resources", "Analysis.csv")
+outputpath = os.path.join(".",  "PyBank", "Resources", "Analysis.csv")
 
 with open(outputpath, 'w', newline='') as r:
     # print(roster)
