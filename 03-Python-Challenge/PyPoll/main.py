@@ -3,7 +3,7 @@ import csv
 
 ##  03-Python-Challenge\PyPoll\Resources\election_data.csv    
 
-filepath = os.path.join(".", "03-Python-Challenge", "PyPoll", "Resources", "election_data.csv")
+filepath = os.path.join(".", "PyPoll", "Resources", "election_data.csv")
 
 candidate = []
 groupcandidate = []
@@ -54,7 +54,7 @@ with open(filepath, 'r') as csvfile:
 #### Write the data in CSV File.
 ### 03-Python-Challenge\PyBank\Resources
 
-outputpath = os.path.join(".", "03-Python-Challenge", "PyPoll", "Resources", "Analysis.csv")
+outputpath = os.path.join(".", "PyPoll", "Resources", "Analysis.csv")
 
 with open(outputpath, 'w', newline='') as r:
     # print(roster)
