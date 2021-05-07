@@ -1,13 +1,14 @@
 ﻿-- Exported from QuickDBD: https://www.quickdatabasediagrams.com/
 -- Link to schema: https://app.quickdatabasediagrams.com/#/d/T0kOSe
 -- NOTE! If you have used non-SQL datatypes in your design, you will have to change these here.
-DROP TABLE IF EXISTS departments;
-DROP TABLE IF EXISTS department_employee;
-DROP TABLE IF EXISTS department_manager;
-DROP TABLE IF EXISTS employees;
-DROP TABLE IF EXISTS salaries;
-DROP TABLE IF EXISTS title;
+--DROP TABLE IF EXISTS departments;
+--DROP TABLE IF EXISTS department_employee;
+--DROP TABLE IF EXISTS department_manager;
+--DROP TABLE IF EXISTS employees;
+--DROP TABLE IF EXISTS salaries;
+--DROP TABLE IF EXISTS title;
 
+-- Create Department Table. --
 CREATE TABLE "departments" (
     "dept_no" varchar(10)   NOT NULL,
     "dept_name" varchar(50)   NOT NULL,
@@ -16,12 +17,14 @@ CREATE TABLE "departments" (
      )
 );
 
+-- Create Department Employee. --
 CREATE TABLE "department_employee" (
     "emp_no" int   NOT NULL,
     "dept_no" varchar(10)   NOT NULL
    
 );
 
+-- Create Department Manager Table. --
 CREATE TABLE "department_manager" (
     "dept_no" varchar(10)   NOT NULL,
     "emp_no" int   NOT NULL,
@@ -31,6 +34,7 @@ CREATE TABLE "department_manager" (
      
 );
 
+-- Create Employees Table. --
 CREATE TABLE "employees" (
     "emp_no" int   NOT NULL,
     "emp_title_id" varchar(10)   NOT NULL,
@@ -44,6 +48,7 @@ CREATE TABLE "employees" (
      )
 );
 
+-- Create Salaries Table. --
 CREATE TABLE "salaries" (
     "emp_no" int   NOT NULL,
     "salary" dec   NOT NULL,
@@ -52,6 +57,7 @@ CREATE TABLE "salaries" (
      )
 );
 
+-- Create Title Table. --
 CREATE TABLE "title" (
     "title_id" varchar(10)   NOT NULL,
     "title" varchar(50)   NOT NULL,
