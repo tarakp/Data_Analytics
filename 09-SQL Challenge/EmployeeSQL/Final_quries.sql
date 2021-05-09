@@ -67,3 +67,20 @@ GROUP BY  d.dept_name, de.emp_no, e.last_name, e.first_name
 SELECT e.last_name, COUNT(e.last_name)
 FROM employees e
 GROUP BY e.last_name
+
+
+-- 9. BONUS - Create a bar chart of average salary by title.
+CREATE VIEW vw_emp_title_avg_sal 
+AS
+
+SELECT e.emp_title_id, t.title, ROUND(AVG(s.salary),2) AS Avg_Salary
+FROM employees e
+INNER JOIN title t
+on e.emp_title_id = t.title_ID
+INNER JOIN salaries s
+on e.emp_no = s.emp_no
+GROUP BY e.emp_title_id, t.title
+
+-- Run the view and use it in Jupyter notebook to plot bar chart
+SELECT title, Avg_Salary FROM vw_emp_title_avg_sal
+
