@@ -9,6 +9,7 @@ def init_browser():
     # Using Temporary Driver
     executable_path = {'executable_path': ChromeDriverManager().install()}
     return Browser("chrome", **executable_path, headless=False)
+    
 
 ##### Define Function Scrape #######
 def scrape():
@@ -87,7 +88,7 @@ def scrape():
     
          # Scrape Image URL
         images_mars = soup_m.find_all('div', class_='downloads')
-        
+
         for image in images_mars:
             image_m = image.find('a')
             img_m = image_m['href']
@@ -106,16 +107,13 @@ def scrape():
     browser.quit()
 
 
-# print(scrape())
-
-
  ############ Store data in a dictionary  #########
 
     mars_data = {
         "news_title" : news_title,
         "news_para" : news_p,
-        "max_temp" : img_news,
-        "html_mars" : html_mrs,
+        "img_news" : img_news,
+        "html_mrs" : html_mrs,
         "Hemisphere_image_urls" : Hemisphere_image_urls
     }
 
