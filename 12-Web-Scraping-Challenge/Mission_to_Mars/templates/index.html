@@ -30,7 +30,7 @@
   <div class="row"> 
     <div class="col-sm-8">
       <h2><strong>Featured Mars Image </strong></h2>
-      <img src="{{ mars.img_news }}" alt="mars_img">
+      <img style="height:450px;" src="{{ mars.img_news| default('Instructions/Images/error.png', true) }}" alt="mars_img">
     </div>  
 
 
