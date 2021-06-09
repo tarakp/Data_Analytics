@@ -1,0 +1,33 @@
+#######################################################################
+#
+# quick_db_diagrams.txt
+# ----
+# 
+# By Anne Niemiec 
+# 
+# This file contains the code for generating a DataBase Diagram from
+#
+# https://app.quickdatabasediagrams.com/
+#
+# This created Database_diagrams.PNG
+# 
+#######################################################################
+
+sp500
+-
+ticker PK varchar(10)
+security_name varchar(255)
+gics_sector varchar(255)
+gics_sub_industry varchar(255)
+
+fund_holdings
+-
+index PK varchar(10)
+fund_name varchar(255)
+ticker varchar(10) FK >- sp500.ticker
+security_name varchar(255)
+currency varchar(5)
+country varchar(50)
+price decimal
+quantity decimal
+market_value decimal
