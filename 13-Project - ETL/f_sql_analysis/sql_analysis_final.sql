@@ -7,9 +7,6 @@
 -- This script analyzes the database tables within sql to 
 -- assess the diversification of the mutual funds of interest.
 --
-------------
-
-select * from sp500
 
 ---Create View for total Market value for funds
 DROP VIEW IF EXISTS vw_total_fund_mv;

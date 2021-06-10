@@ -5,7 +5,7 @@ run_all_ETL.py
 
 Written in the Python 3.7.9 Environment
 
-By Nicole Lund
+By Nicole Lund, Tarak Patel and Anne Niemiec
 
 This Python script automatically runs all ETL steps for investigating
 the holdings of 5 mutual funds.
@@ -20,11 +20,9 @@ import pandas as pd
 import sqlalchemy
 from sqlalchemy import create_engine
 
-# Import database password
+# Update the postgres_pswd.py file before you run the code. The file is in main repository
+
 from postgres_pswd import host, database, username, passwd
-if host == 'YOUR DATABASE HOST HERE':
-    sys.path.append(r"C:\Users\nlund\Documents\GitHub\untracked_files")
-    from postgres_remote import host, database, username, passwd
 
 # Define how many sectors to display in the output of the sector analysis
 output='top3'
@@ -78,9 +76,13 @@ sp500_df.to_sql(name='sp500', con=engine, if_exists='append')
 holdings_df.to_sql(name='fund_holdings', con=engine, if_exists='append')
 
 
-######################################################################
-# Perform Analysis Queries in PostgreSQL database
-#######################################################################
+#####################################################################################################################
+# Perform Analysis Queries in PostgreSQL database ---Please look at SQL_analysis_final.sql File for final analysis
+###################################################################################################################
 # Analyze the database tables
 from sql_analysis import analyze_sql
 analyze_sql(engine_startup,output)
+
+############################################################################
+# ---Please look at SQL_analysis_final.sql File for final analysis
+############################################################################
