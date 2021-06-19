@@ -33,9 +33,9 @@ button.on("click", runEnter);
 form.on("submit",runEnter);
 
 function runEnter() {
-    // Then, select the unordered list element by class name
+  // Then, select the Table Body list element by class name
   var list = d3.select("tbody");
-  // remove any children from the list to
+  // Then, select the Table Body list element by class name
   list.html("");
   var tbody = d3.select("tbody")
   // Prevent the page from refreshing
@@ -48,7 +48,7 @@ function runEnter() {
   var inputDate = inputTable.property("value");
 
   console.log("======= Print Filtered Data in console=======")
-  // Use the form input to filter the data by blood type
+  // Use the form input to filter the data by Date
   var filterDate = tableData.filter(tableData => tableData.datetime === inputDate);
   console.log(filterDate);
 
