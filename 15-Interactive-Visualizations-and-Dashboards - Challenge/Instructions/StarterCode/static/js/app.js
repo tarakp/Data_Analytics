@@ -1,9 +1,11 @@
 // Since the data is a Json Data get the URL
 url = "samples.json"
 
+
 // Initializes the page with Default to select subject ID
 function init() {
     // Use D3 to select the dropdown menu
+    
     var dropdownMenu = d3.select("#selDataset");
 
     // Use d3 to get the data from URL.
@@ -20,29 +22,33 @@ function init() {
         toption.text(sampleData[i])
         toption.property("value", sampleData[i]);
         };
+        
     });
+
+    // buildtable();
+    // plotbar();
+    // plotbubble();
+    // buildGauge();
 };
+
 
 // Create a function to handle the change in the dropdown box
 function optionChanged(newID) {
-    // Call the Functions created below 
+    
+    
     buildtable(newID);
     plotbar(newID);
     plotbubble(newID);
     buildGauge(newID);
+    
 }
-
-// Call updatePlotly() when a change takes place to the DOM
-// d3.selectAll("#selDataset").on("change", init);
-
 
 // create a function for pulling the metadata for Subject ID
 function buildtable(ID) {
-    
+    // d3.selectAll("#sample-metadata").value="";
     // Use d3 to get the data from URL.
     d3.json(url).then(function(data) {
-    console.log(data);
-
+    console.log
 
       // Grab values from the response json object to Build Table
       var metadata = data.metadata;
@@ -52,27 +58,28 @@ function buildtable(ID) {
       //  and setting it to a new variable
       var metaFilter = metadata.filter(row => row.id == ID);
       console.log(metaFilter)
-
+        
       // for the Filtered data set the index to 0 
       // since we will always be picking data for 1 subject ID 
       // that is selected in the dropdown menu
       var finaldata = metaFilter[0];
       console.log(finaldata)
 
-      // Use D3 to select the dropdown menu
+      //clear the values
       var list1 = d3.selectAll("#sample-metadata");
 
       // Clear the HTML List so it dont show up multiple time
       list1.html("");
+        // list1."sample-metadata"("")
 
       //  Loop through keys and values and use arrow method  
       //  to append it to the page using  
       Object.entries(finaldata).forEach(([key, value]) => {
         list1.append("h6").text(key + ': ' + value); 
       })
-    
+      
    });
-
+   
 };
 
 
@@ -297,3 +304,8 @@ function buildGauge(ID) {
 
 // initialize the init function
 init();
+
+
+
+
+
